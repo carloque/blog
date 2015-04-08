@@ -1,0 +1,22 @@
+<h1 id="">Lista de artículos</h1>
+
+<table>
+	<tr>
+		<th>Title</th>
+		<th>Text</th>
+	</tr>
+	
+	<% @articles.each do |a| %>
+	<tr>
+		<td><%= a.title %></td>
+		<td><%= a.text %></td>
+		<td><%= link_to 'edit', controller: 'articles', action: 'edit', id: a.id %></td>
+	</tr>	
+	<% end %>
+	<tr>
+		<td></td>
+		<td>
+			<%= link_to 'Nuevo artículo', new_article_path %>
+		</tr>
+</table>
+
